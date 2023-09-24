@@ -1,5 +1,18 @@
 name: Events Demo 1
-on: ...
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main # main
+      - 'dev-*' # dev-new dev-this-new
+      - 'feat/**' # feat/new feat/new/button
+  workflow_dispatch:
+  push:
+    branches:
+      - main # main
+      - 'dev-*' # dev-new dev-this-new
+      - 'feat/**' # feat/new feat/new/button
 jobs:
   deploy:
     runs-on: ubuntu-latest
